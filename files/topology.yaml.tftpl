@@ -1,0 +1,23 @@
+global:
+  user: "tidb"
+  ssh_port: 22
+  deploy_dir: "/tidb-deploy"
+
+tidb_servers:
+  %{~ for host in tidb_hosts ~}
+  - host: ${host}
+  %{~ endfor ~}
+
+tikv_servers:
+  %{~ for host in tikv_hosts ~}
+  - host: ${host}
+  %{~ endfor ~}
+
+pd_servers:
+  - host: 172.31.8.1
+
+monitoring_servers:
+  - host: 172.31.8.1
+
+grafana_servers:
+  - host: 172.31.8.1
