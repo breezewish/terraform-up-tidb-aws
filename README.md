@@ -1,6 +1,6 @@
 # terraform-up-tidb-aws
 
-A sample to create and VMs for deploying TiDB in AWS using [Terraform](https://www.terraform.io) with these default topology:
+A sample to create VMs for deploying TiDB in AWS using [Terraform](https://www.terraform.io) with these default topology:
 
 | Usage                                       | Size   | Count | Private IP                  |
 |---------------------------------------------|--------|-------|-----------------------------|
