@@ -106,14 +106,15 @@ terraform destroy -auto-approve
 
 | Status | Feature                                    |
 |--------|--------------------------------------------|
+| ✅      | Intra-host public key authentication      |
 | ✅      | HAProxy for multiple TiDB instances        |
-| ✅      | Customize Instance Count and Size          |
+| ✅      | Customize instance count and size          |
 | ✅      | Enable core dump                           |
 | ✅      | With zsh                                   |
 | ✅      | TiDB recommended kernal parameters         |
 | ❌      | Support TiFlash ^1                        |
-| ❌      | Instance Size is identical with TiDB Cloud ^2|
+| ❌      | Instance size is identical with TiDB Cloud ^2|
 
-^1: PR is welcome
+^1: PR is welcome, it should be pretty easy.
 
 ^2: TiDB Cloud uses r5.2xlarge for TiKV nodes.
