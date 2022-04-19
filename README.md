@@ -108,6 +108,7 @@ terraform destroy -auto-approve
 |--------|--------------------------------------------|
 | ✅      | Intra-host public key authentication      |
 | ✅      | HAProxy for multiple TiDB instances        |
+| ✅      | Expose PD and Grafana for public access    |
 | ✅      | Customize instance count and size          |
 | ✅      | Enable core dump                           |
 | ✅      | With zsh                                   |
