@@ -106,6 +106,7 @@ terraform destroy -auto-approve
 
 | Status | Feature                                    |
 |--------|--------------------------------------------|
+| ✅      | Ubuntu 20.04 (x86_64)                     |
 | ✅      | Intra-host public key authentication      |
 | ✅      | HAProxy for multiple TiDB instances        |
 | ✅      | Expose PD and Grafana for public access    |
