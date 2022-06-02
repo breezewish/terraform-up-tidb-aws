@@ -114,9 +114,5 @@ terraform destroy -auto-approve
 | ✅      | Enable core dump                           |
 | ✅      | With zsh                                   |
 | ✅      | TiDB recommended kernal parameters         |
-| ❌      | Support TiFlash ^1                        |
-| ❌      | Instance size is identical with TiDB Cloud ^2|
-
-^1: PR is welcome, it should be pretty easy.
-
-^2: TiDB Cloud uses r5.2xlarge for TiKV nodes.
+| ✅      | Support TiFlash                            |
+| ✅      | Instance size is identical with TiDB Cloud |
