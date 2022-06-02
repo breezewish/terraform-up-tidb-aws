@@ -6,10 +6,11 @@ locals {
   image  = "ami-0fb653ca2d3203ac1" # Ubuntu 20.04
 
   # If you want to change instance type, ensure that GP3 EBS is available in the instance type.
-  tidb_instance   = "c5.2xlarge"
-  tikv_instance   = "c5.2xlarge"
-  pd_instance     = "c5.2xlarge"
-  center_instance = "c5.2xlarge"
+  tidb_instance    = "c5.2xlarge"
+  tikv_instance    = "r5.2xlarge"
+  pd_instance      = "c5.2xlarge"
+  tiflash_instance = "r5.2xlarge"
+  center_instance  = "c5.2xlarge"
 
   master_ssh_key         = "./master_key"
   master_ssh_public      = "./master_key.pub"

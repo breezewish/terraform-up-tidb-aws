@@ -4,9 +4,10 @@ A sample to create VMs for deploying TiDB in AWS using [Terraform](https://www.t
 
 | Usage                                       | Size   | Count | Private IP                  |
 |---------------------------------------------|--------|-------|-----------------------------|
-| TiKV                                        | 8c 16g | 3     | 172.31.6.1, 172.31.6.2, ... |
+| TiKV                                        | 8c 64g | 3     | 172.31.6.1, 172.31.6.2, ... |
 | TiDB                                        | 8c 16g | 2     | 172.31.7.1, 172.31.7.2, ... |
 | PD + Grafana + Monitoring                   | 8c 16g | 1     | 172.31.8.1                  |
+| TiFlash                                     | 8c 64g | 0     | 172.31.9.1, 172.31.9.2, ... |
 | Center VM, you can run benchmarks and so on | 8c 16g | 1     | 172.31.1.1                  |
 
 The topology and instance size can be customized via [`locals_common.tf`](./locals_common.tf) and [`locals_advanced.tf`](./locals_advanced.tf).
@@ -40,9 +41,10 @@ Customize the number of TiDB and TiKV VMs in [`locals_common.tf`](./locals_commo
 
 ```terraform
 locals {
-  name   = "foo-benchmark"
-  n_tidb = 1  # default 2
-  n_tikv = 3  # default 3
+  name      = "foo-benchmark"
+  n_tidb    = 1  # default 2
+  n_tikv    = 3  # default 3
+  n_tiflash = 0  # default 0
 }
 ```
 
@@ -62,6 +64,7 @@ private-ip-tidb = [
   "172.31.7.1",
   "172.31.7.2",
 ]
+private-ip-tiflash = []
 private-ip-tikv = [
   "172.31.6.1",
   "172.31.6.2",
@@ -114,9 +117,5 @@ terraform destroy -auto-approve
 | ✅      | Enable core dump                           |
 | ✅      | With zsh                                   |
 | ✅      | TiDB recommended kernal parameters         |
-| ❌      | Support TiFlash ^1                        |
-| ❌      | Instance size is identical with TiDB Cloud ^2|
-
-^1: PR is welcome, it should be pretty easy.
-
-^2: TiDB Cloud uses r5.2xlarge for TiKV nodes.
+| ✅      | Support TiFlash                            |
+| ✅      | Instance size is identical with TiDB Cloud |

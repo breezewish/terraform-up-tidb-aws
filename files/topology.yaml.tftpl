@@ -3,6 +3,12 @@ global:
   ssh_port: 22
   deploy_dir: "/tidb-deploy"
 
+server_configs:
+  tidb: {}
+  tikv: {}
+  pd: {}
+  tiflash: {}
+
 tidb_servers:
   %{~ for host in tidb_hosts ~}
   - host: ${host}
@@ -10,6 +16,11 @@ tidb_servers:
 
 tikv_servers:
   %{~ for host in tikv_hosts ~}
+  - host: ${host}
+  %{~ endfor ~}
+
+tiflash_servers:
+  %{~ for host in tiflash_hosts ~}
   - host: ${host}
   %{~ endfor ~}
 
