@@ -3,7 +3,7 @@
 A sample to create VMs for deploying TiDB in AWS using [Terraform](https://www.terraform.io) with these default topology:
 
 | Usage                                       | Size   | Count | Private IP                  |
-|---------------------------------------------|--------|-------|-----------------------------|
+| ------------------------------------------- | ------ | ----- | --------------------------- |
 | TiKV                                        | 8c 64g | 3     | 172.31.6.1, 172.31.6.2, ... |
 | TiDB                                        | 8c 16g | 2     | 172.31.7.1, 172.31.7.2, ... |
 | PD + Grafana + Monitoring                   | 8c 16g | 1     | 172.31.8.1                  |
@@ -108,14 +108,15 @@ terraform destroy -auto-approve
 ## Features
 
 | Status | Feature                                    |
-|--------|--------------------------------------------|
-| ✅      | Ubuntu 20.04 (x86_64)                     |
-| ✅      | Intra-host public key authentication      |
-| ✅      | HAProxy for multiple TiDB instances        |
-| ✅      | Expose PD and Grafana for public access    |
-| ✅      | Customize instance count and size          |
-| ✅      | Enable core dump                           |
-| ✅      | With zsh                                   |
-| ✅      | TiDB recommended kernal parameters         |
-| ✅      | Support TiFlash                            |
-| ✅      | Instance size is identical with TiDB Cloud |
+| ------ | ------------------------------------------ |
+| ✅     | Ubuntu 20.04 (x86_64)                      |
+| ✅     | Intra-host public key authentication       |
+| ✅     | HAProxy for multiple TiDB instances        |
+| ✅     | Expose PD and Grafana for public access    |
+| ✅     | Customize instance count and size          |
+| ✅     | Enable core dump                           |
+| ✅     | With zsh                                   |
+| ✅     | TiDB recommended kernal parameters         |
+| ✅     | Support TiFlash                            |
+| ✅     | Instance size is identical with TiDB Cloud |
+| ✅     | EC2 IAM Profile to access S3 without AK, SK |
