@@ -2,7 +2,7 @@
 
 locals {
   # image is region-local. If you changed region, please also change image.
-  region = "us-east-2"
+  region = "us-west-2"
   image  = "ami-03f65b8614a860c29" # Canonical, Ubuntu, 22.04 LTS, amd64 jammy image build on 2023-05-16
 
   # If you want to change instance type, ensure that GP3 EBS is available in the instance type.
